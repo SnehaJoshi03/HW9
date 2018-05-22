@@ -24,8 +24,6 @@ class SettingsViewController: UIViewController {
     var pickerData: [String] = [String]()
     var isDistance = true
     
-    /*var dUnits : String?
-    var bUnits: String?*/
     var dUnits: String?
     var bUnits : String?
     
@@ -49,6 +47,7 @@ class SettingsViewController: UIViewController {
         self.bearingUnits.addGestureRecognizer(tapBearing)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.hidePicker))
+        view.isUserInteractionEnabled = true
         self.view.addGestureRecognizer(tap)
         
         
@@ -61,11 +60,11 @@ class SettingsViewController: UIViewController {
     
     @objc func distanceTapped(sender: UITapGestureRecognizer){
         print("gesture recognizer tapped1")
-     //   self.picker.isHidden = false
+      //  self.picker.isHidden = false
         self.pickerData = ["Kilometers", "Miles"]
         self.picker.reloadAllComponents()
         self.picker.isHidden = false
-        self.isDistance = true
+     //   self.isDistance = true
         
     }
     
@@ -74,13 +73,22 @@ class SettingsViewController: UIViewController {
         self.pickerData = ["Degrees", "Mils"]
         self.picker.reloadAllComponents()
         self.picker.isHidden = false
-        self.isDistance = false
+     //   self.isDistance = false
     }
     
     @objc func hidePicker(sender: UITapGestureRecognizer) {
         self.picker.isHidden = true
     }
     
+    override func prepare(for segue : UIStoryboardSegue, sender : Any?)
+    {
+        if (segue.identifier == "goS") {
+            guard let vc = segue.destination as? ViewController else { return}
+            vc.dunitselect = dUnits!
+            vc.bunitselect = bUnits!
+        }
+        
+    }
     /*
      // MARK: - Navigation
      // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -90,7 +98,7 @@ class SettingsViewController: UIViewController {
      }
      */
     
-    @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
+   /* @IBAction func cancelPressed(_ sender: UIBarButtonItem) {
         _ = self.navigationController?.popViewController(animated: true)
         self.dismiss(animated: true, completion: nil)
     }
@@ -100,18 +108,19 @@ class SettingsViewController: UIViewController {
         if let del = self.delegate {
             distanceUnits.text = dUnits
             bearingUnits.text = bUnits
+           
             del.settingsChanged(distanceUnits: self.dUnits!, bearingUnits: self.bUnits!)
         }
         self.dismiss(animated: true, completion: nil)
         _ = self.navigationController?.popViewController(animated: true)
-    }
+    }*/
     
-    /*override func viewWillDisappear(_ animated: Bool) {
+   /* override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         if let d = self.delegate {
             distanceUnits.text = dUnits
             bearingUnits.text = bUnits
-            d.settingsChanged(distanceUnits: dUnits, bearingUnits: bUnits)
+            d.settingsChanged(distanceUnits: dUnits!, bearingUnits: bUnits!)
         }
     }*/
     
@@ -137,7 +146,7 @@ extension SettingsViewController : UIPickerViewDataSource, UIPickerViewDelegate 
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
-        if (self.pickerData[0]=="Kilometers") {
+        if (self.pickerData[0]=="Kilometers" || self.pickerData[1]=="Kilometers") {
             self.distanceUnits.text = self.pickerData[row]
             self.dUnits = self.pickerData[row]
         } else {

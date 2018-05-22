@@ -21,12 +21,16 @@ class ViewController: UIViewController,SettingsViewControllerDelegate{
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var bearingLabel: UILabel!
     
+    @IBOutlet weak var bLabel: UILabel!
+    @IBOutlet weak var dLabel: UILabel!
     var dunitselect : String = "Kilometers"
     var bunitselect : String = "Degrees"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from
+        dLabel.text = dunitselect
+        bLabel.text = bunitselect
     }
     
     override func didReceiveMemoryWarning() {
@@ -51,15 +55,15 @@ class ViewController: UIViewController,SettingsViewControllerDelegate{
         let bearing = p1.bearingToPoint(point: p2)
         
         if dunitselect == "Kilometers" {
-            self.distanceLabel.text = " \((distance / 10.0).rounded() / 100.0) kilometers"
+            self.distanceLabel.text = " \((distance / 10.0).rounded() / 100.0) "
         } else {
-            self.distanceLabel.text = " \((distance * 0.0621371).rounded() / 100.0) miles"
+            self.distanceLabel.text = " \((distance * 0.0621371).rounded() / 100.0) "
         }
         
         if bunitselect == "Degrees" {
-            self.bearingLabel.text = " \((bearing * 100).rounded() / 100.0) degrees."
+            self.bearingLabel.text = " \((bearing * 100).rounded() / 100.0) "
         } else {
-            self.bearingLabel.text = " \((bearing * 1777.7777777778).rounded() / 100.0) mils."
+            self.bearingLabel.text = " \((bearing * 1777.7777777778).rounded() / 100.0) "
         }
     
     }
@@ -82,7 +86,7 @@ class ViewController: UIViewController,SettingsViewControllerDelegate{
         self.p2Lng.text = ""
         self.distanceLabel.text = " "
         self.bearingLabel.text = " "
-        self.view.endEditing(true)
+        self.view.endEditing(true)  
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
