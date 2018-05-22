@@ -17,7 +17,6 @@
 		7B08C7E120ADD10900195E9A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08C7E020ADD10900195E9A /* SettingsViewController.swift */; };
 		7B08C7E320ADD18400195E9A /* DecimalMinusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08C7E220ADD18400195E9A /* DecimalMinusTextField.swift */; };
 		7B08C7E520ADD19800195E9A /* CLLocationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08C7E420ADD19800195E9A /* CLLocationExtensions.swift */; };
-		7B08C7E720ADD8FA00195E9A /* LocationLookUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08C7E620ADD8FA00195E9A /* LocationLookUp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +53,6 @@
 		7B08C7E020ADD10900195E9A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7B08C7E220ADD18400195E9A /* DecimalMinusTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecimalMinusTextField.swift; sourceTree = "<group>"; };
 		7B08C7E420ADD19800195E9A /* CLLocationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationExtensions.swift; sourceTree = "<group>"; };
-		7B08C7E620ADD8FA00195E9A /* LocationLookUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationLookUp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +106,6 @@
 				7B08C7B220ADD0DC00195E9A /* AppDelegate.swift */,
 				7B08C7E420ADD19800195E9A /* CLLocationExtensions.swift */,
 				7B08C7B420ADD0DC00195E9A /* ViewController.swift */,
-				7B08C7E620ADD8FA00195E9A /* LocationLookUp.swift */,
 				7B08C7E220ADD18400195E9A /* DecimalMinusTextField.swift */,
 				7B08C7E020ADD10900195E9A /* SettingsViewController.swift */,
 				7B08C7B620ADD0DC00195E9A /* Main.storyboard */,
@@ -272,7 +269,6 @@
 				7B08C7B520ADD0DC00195E9A /* ViewController.swift in Sources */,
 				7B08C7B320ADD0DC00195E9A /* AppDelegate.swift in Sources */,
 				7B08C7E320ADD18400195E9A /* DecimalMinusTextField.swift in Sources */,
-				7B08C7E720ADD8FA00195E9A /* LocationLookUp.swift in Sources */,
 				7B08C7E120ADD10900195E9A /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

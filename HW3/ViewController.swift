@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  HW3
 //
-//  Created by Sneha Joshi on 5/17/18.
+//  Created by Sneha Joshi and Akshay Khandgonda on 5/17/18.
 //  Copyright © 2018 Sneha Joshi. All rights reserved.
 //
 
