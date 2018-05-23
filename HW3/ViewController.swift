@@ -21,16 +21,13 @@ class ViewController: UIViewController,SettingsViewControllerDelegate{
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var bearingLabel: UILabel!
     
-    @IBOutlet weak var bLabel: UILabel!
-    @IBOutlet weak var dLabel: UILabel!
     var dunitselect : String = "Kilometers"
     var bunitselect : String = "Degrees"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from
-        dLabel.text = dunitselect
-        bLabel.text = bunitselect
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,11 +35,11 @@ class ViewController: UIViewController,SettingsViewControllerDelegate{
         // Dispose of any resources that can be recreated.
     }
     func settingsChanged(distanceUnits: String, bearingUnits: String){
-        dunitselect = distanceUnits
-        bunitselect = bearingUnits
+       self.dunitselect = distanceUnits
+        self.bunitselect = bearingUnits
         self.doCalculatations()
+        self.view.endEditing(true)
     }
-    
     
     func doCalculatations()
     {
@@ -55,15 +52,15 @@ class ViewController: UIViewController,SettingsViewControllerDelegate{
         let bearing = p1.bearingToPoint(point: p2)
         
         if dunitselect == "Kilometers" {
-            self.distanceLabel.text = " \((distance / 10.0).rounded() / 100.0) "
+            self.distanceLabel.text = "Distance \((distance / 10.0).rounded() / 100.0) kilometer"
         } else {
-            self.distanceLabel.text = " \((distance * 0.0621371).rounded() / 100.0) "
+            self.distanceLabel.text = "Distance \((distance * 0.0621371).rounded() / 100.0 ) miles "
         }
         
         if bunitselect == "Degrees" {
-            self.bearingLabel.text = " \((bearing * 100).rounded() / 100.0) "
+            self.bearingLabel.text = "Bearing \((bearing * 100).rounded() / 100.0) degrees"
         } else {
-            self.bearingLabel.text = " \((bearing * 1777.7777777778).rounded() / 100.0) "
+            self.bearingLabel.text = "Bearing \((bearing * 1777.7777777778).rounded() / 100.0) mils"
         }
     
     }
@@ -91,7 +88,7 @@ class ViewController: UIViewController,SettingsViewControllerDelegate{
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        
-            if let dest = segue.destination as? SettingsViewController {
+            if let dest = segue.destination.childViewControllers[0] as? SettingsViewController {
                dest.dUnits = self.dunitselect
                 dest.bUnits = self.bunitselect
                 dest.delegate = self
