@@ -27,7 +27,7 @@ class ViewController: UIViewController,SettingsViewControllerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from
-        
+        self.view.backgroundColor = BACKGROUND_COLOR
     }
     
     override func didReceiveMemoryWarning() {
