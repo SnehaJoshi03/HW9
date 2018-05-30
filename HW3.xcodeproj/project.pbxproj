@@ -17,6 +17,7 @@
 		7B08C7E120ADD10900195E9A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08C7E020ADD10900195E9A /* SettingsViewController.swift */; };
 		7B08C7E320ADD18400195E9A /* DecimalMinusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08C7E220ADD18400195E9A /* DecimalMinusTextField.swift */; };
 		7B08C7E520ADD19800195E9A /* CLLocationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B08C7E420ADD19800195E9A /* CLLocationExtensions.swift */; };
+		7B8DB74D20BF138200B74E12 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8DB74C20BF138200B74E12 /* HistoryTableViewCell.swift */; };
 		7BC2656A20BE1252003152E2 /* LocationLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC2656920BE1252003152E2 /* LocationLookup.swift */; };
 		7BC2656C20BE1A2F003152E2 /* HistoryTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC2656B20BE1A2F003152E2 /* HistoryTableTableViewController.swift */; };
 		7BF759C020B862CB00226750 /* GeoCalcLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF759BF20B862CB00226750 /* GeoCalcLabel.swift */; };
@@ -58,6 +59,7 @@
 		7B08C7E020ADD10900195E9A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		7B08C7E220ADD18400195E9A /* DecimalMinusTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecimalMinusTextField.swift; sourceTree = "<group>"; };
 		7B08C7E420ADD19800195E9A /* CLLocationExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CLLocationExtensions.swift; sourceTree = "<group>"; };
+		7B8DB74C20BF138200B74E12 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		7BC2656920BE1252003152E2 /* LocationLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationLookup.swift; sourceTree = "<group>"; };
 		7BC2656B20BE1A2F003152E2 /* HistoryTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableTableViewController.swift; sourceTree = "<group>"; };
 		7BF759BF20B862CB00226750 /* GeoCalcLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCalcLabel.swift; sourceTree = "<group>"; };
@@ -145,9 +147,13 @@
 		7BC2656520BE11C0003152E2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7B08C7B620ADD0DC00195E9A /* Main.storyboard */,
+				7B08C7BB20ADD0DD00195E9A /* LaunchScreen.storyboard */,
+				7B08C7B920ADD0DD00195E9A /* Assets.xcassets */,
 				7BF759BF20B862CB00226750 /* GeoCalcLabel.swift */,
 				7BF759C120B8652500226750 /* GeoCalcTextField.swift */,
 				7BF759C320B8664C00226750 /* GeoCalcButton.swift */,
+				7B8DB74C20BF138200B74E12 /* HistoryTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -155,9 +161,6 @@
 		7BC2656720BE11F1003152E2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				7B08C7B620ADD0DC00195E9A /* Main.storyboard */,
-				7B08C7B920ADD0DD00195E9A /* Assets.xcassets */,
-				7B08C7BB20ADD0DD00195E9A /* LaunchScreen.storyboard */,
 				7B08C7E020ADD10900195E9A /* SettingsViewController.swift */,
 				7B08C7B420ADD0DC00195E9A /* ViewController.swift */,
 				7BC2656B20BE1A2F003152E2 /* HistoryTableTableViewController.swift */,
@@ -312,6 +315,7 @@
 				7B08C7E320ADD18400195E9A /* DecimalMinusTextField.swift in Sources */,
 				7B08C7E120ADD10900195E9A /* SettingsViewController.swift in Sources */,
 				7BC2656C20BE1A2F003152E2 /* HistoryTableTableViewController.swift in Sources */,
+				7B8DB74D20BF138200B74E12 /* HistoryTableViewCell.swift in Sources */,
 				7BC2656A20BE1252003152E2 /* LocationLookup.swift in Sources */,
 				7BF759C020B862CB00226750 /* GeoCalcLabel.swift in Sources */,
 			);

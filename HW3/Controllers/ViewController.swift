@@ -11,6 +11,11 @@ import CoreLocation
 
 class ViewController: UIViewController,SettingsViewControllerDelegate,HistoryTableTableViewControllerDelegate, UITableViewDelegate{
     
+    var entries : [LocationLookup] = [
+        LocationLookup(origLat: 90.0, origLng: 0.0, destLat: -90.0, destLng: 0.0,
+                       timestamp: Date.distantPast),
+        LocationLookup(origLat: -90.0, origLng: 0.0, destLat: 90.0, destLng: 0.0,
+                       timestamp: Date.distantFuture)]
     
     @IBOutlet weak var p1Lat: DecimalMinusTextField!
     @IBOutlet weak var p1Lng: DecimalMinusTextField!
@@ -24,7 +29,7 @@ class ViewController: UIViewController,SettingsViewControllerDelegate,HistoryTab
     var dunitselect : String = "Kilometers"
     var bunitselect : String = "Degrees"
     
-    var entries :[LocationLookup] = []
+  //  var entries :[LocationLookup] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -116,7 +121,7 @@ class ViewController: UIViewController,SettingsViewControllerDelegate,HistoryTab
        }
     }
     
-
+    
 }
 
 
