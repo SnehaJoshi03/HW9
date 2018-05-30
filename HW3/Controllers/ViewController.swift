@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class ViewController: UIViewController,SettingsViewControllerDelegate{
+class ViewController: UIViewController,SettingsViewControllerDelegate,HistoryTableTableViewControllerDelegate, UITableViewDelegate{
     
     
     @IBOutlet weak var p1Lat: DecimalMinusTextField!
@@ -23,6 +23,8 @@ class ViewController: UIViewController,SettingsViewControllerDelegate{
     
     var dunitselect : String = "Kilometers"
     var bunitselect : String = "Degrees"
+    
+    var entries :[LocationLookup] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,14 @@ class ViewController: UIViewController,SettingsViewControllerDelegate{
         self.bunitselect = bearingUnits
         self.doCalculatations()
         self.view.endEditing(true)
+    }
+    
+    func selectEntry(entry: LocationLookup) {
+        self.p1Lat.text = "\(entry.origLat)"
+        self.p1Lng.text = "\(entry.origLng)"
+        self.p2Lat.text = "\(entry.destLat)"
+        self.p2Lng.text = "\(entry.destLng)"
+        self.doCalculatations()
     }
     
     func doCalculatations()
@@ -63,11 +73,14 @@ class ViewController: UIViewController,SettingsViewControllerDelegate{
             self.bearingLabel.text = "Bearing \((bearing * 1777.7777777778).rounded() / 100.0) mils"
         }
     
+        entries.append(LocationLookup(origLat: p1lt, origLng: p1ln, destLat: p2lt,destLng: p2ln, timestamp: Date()))
     }
     
+   
     @IBAction func calculateButtonPressed(_ sender: UIButton) {
         self.doCalculatations()
         self.view.endEditing(true)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -87,16 +100,24 @@ class ViewController: UIViewController,SettingsViewControllerDelegate{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
-            if let dest = segue.destination.childViewControllers[0] as? SettingsViewController {
-               dest.dUnits = self.dunitselect
+        
+        if segue.identifier == "historySegue"{
+            if let dest = segue.destination as? HistoryTableTableViewController {
+              dest.entries = self.entries
+                dest.delegate = self
+            } 
+            
+        }else if segue.identifier == "settingsSegue"{
+            if let dest = segue.destination as? SettingsViewController {
+                dest.dUnits = self.dunitselect
                 dest.bUnits = self.bunitselect
                 dest.delegate = self
-            }
         }
-    
+       }
     }
+    
 
+}
 
 
 

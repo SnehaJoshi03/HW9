@@ -81,11 +81,13 @@ class SettingsViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
        self.delegate?.settingsChanged(distanceUnits: dUnits!, bearingUnits: bUnits!)
-        self.dismiss(animated: true, completion: nil)
+        //self.dismiss(animated: true, completion: nil)
+         _ = self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+      //  self.dismiss(animated: true, completion: nil)
+         _ = self.navigationController?.popViewController(animated: true)
     }
     
     @objc func hidePicker(sender: UITapGestureRecognizer) {
