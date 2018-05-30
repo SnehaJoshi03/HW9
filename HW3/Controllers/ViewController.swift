@@ -104,7 +104,7 @@ class ViewController: UIViewController,SettingsViewControllerDelegate,HistoryTab
         if segue.identifier == "historySegue"{
             if let dest = segue.destination as? HistoryTableTableViewController {
               dest.entries = self.entries
-                dest.delegate = self
+                dest.historyDelegate = self
             } 
             
         }else if segue.identifier == "settingsSegue"{

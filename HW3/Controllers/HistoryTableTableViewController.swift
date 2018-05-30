@@ -16,7 +16,7 @@ class HistoryTableTableViewController: UITableViewController {
     
     var entries : [LocationLookup] = []
 
-     var delegate : HistoryTableTableViewControllerDelegate?
+     var historyDelegate : HistoryTableTableViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,7 @@ class HistoryTableTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellId", for:
             indexPath)
         let location = self.entries[indexPath.row]
-        cell.textLabel?.text = "(\(location.origLat),\(location.origLng)), (\(location.destLat),\(location.destLng))";
+        cell.textLabel?.text = "(\((location.origLat*10000).rounded()/10000),\((location.origLng*10000).rounded()/10000)), (\((location.destLat*10000).rounded()/10000),\((location.destLng*10000).rounded()/10000))";
         cell.detailTextLabel?.text = "\(location.timestamp)"
         return cell
     }
@@ -57,7 +57,7 @@ class HistoryTableTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath:
         IndexPath){
         // use the historyDelegate to report back entry selected to the calculator
-            if let del = self.delegate {
+            if let del = self.historyDelegate {
             let ll = entries[indexPath.row]
             del.selectEntry(entry: ll)
         }
