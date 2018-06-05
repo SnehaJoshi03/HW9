@@ -2,7 +2,7 @@
 //  HistoryTableTableViewController.swift
 //  HW3
 //
-//  Created by Sneha Joshi on 5/29/18.
+//  Created by Sneha Joshi and Akshay on 5/29/18.
 //  Copyright © 2018 Sneha Joshi. All rights reserved.
 //
 
@@ -16,18 +16,31 @@ class HistoryTableTableViewController: UITableViewController {
     
     var entries : [LocationLookup] = []
 
-     var historyDelegate : HistoryTableTableViewControllerDelegate?
+    var historyDelegate : HistoryTableTableViewControllerDelegate?
+    
+    var tableViewData: [(sectionHeader: String, entries: [LocationLookup])]? {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.sortIntoSections(entries: self.entries)
-
+        self.navigationController?.navigationBar.topItem?.title = "GeoCalculator";
+        self.title = "History"
+        
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+         //self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -108,13 +121,7 @@ class HistoryTableTableViewController: UITableViewController {
     _ = self.navigationController?.popViewController(animated: true)
     }
     
-    var tableViewData: [(sectionHeader: String, entries: [LocationLookup])]? {
-        didSet {
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
+   
     
     func sortIntoSections(entries: [LocationLookup]) {
         var tmpEntries : Dictionary<String,[LocationLookup]> = [:]
