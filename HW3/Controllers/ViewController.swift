@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreLocation
+import Firebase
 
 class ViewController: UIViewController,SettingsViewControllerDelegate,HistoryTableTableViewControllerDelegate, UITableViewDelegate{
+    
+    fileprivate var ref : DatabaseReference?
     
     var entries : [LocationLookup] = [
         LocationLookup(origLat: 90.0, origLng: 0.0, destLat: -90.0, destLng: 0.0,
@@ -35,12 +38,15 @@ class ViewController: UIViewController,SettingsViewControllerDelegate,HistoryTab
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from
         self.view.backgroundColor = BACKGROUND_COLOR
+        self.ref = Database.database().reference()
+        self.registerForFireBaseUpdates()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     func settingsChanged(distanceUnits: String, bearingUnits: String){
        self.dunitselect = distanceUnits
         self.bunitselect = bearingUnits
@@ -77,12 +83,16 @@ class ViewController: UIViewController,SettingsViewControllerDelegate,HistoryTab
         } else {
             self.bearingLabel.text = "Bearing \((bearing * 1777.7777777778).rounded() / 100.0) mils"
         }
-    
-        entries.append(LocationLookup(origLat: p1lt, origLng: p1ln, destLat: p2lt,destLng: p2ln, timestamp: Date()))
+        
+        //save history to Firebase
+        let entry = LocationLookup(origLat: p1lt, origLng: p1ln, destLat: p2lt, destLng: p2ln, timestamp: Date())
+        let newChild = self.ref?.child("history").childByAutoId()
+        newChild?.setValue(self.toDictionary(vals: entry))
+        
+       // entries.append(LocationLookup(origLat: p1lt, origLng: p1ln, destLat: p2lt,destLng: p2ln, timestamp: Date()))
     }
     
-   
-    @IBAction func calculateButtonPressed(_ sender: UIButton) {
+   @IBAction func calculateButtonPressed(_ sender: UIButton) {
         self.doCalculatations()
         self.view.endEditing(true)
         
@@ -118,11 +128,54 @@ class ViewController: UIViewController,SettingsViewControllerDelegate,HistoryTab
                 dest.bUnits = self.bunitselect
                 dest.delegate = self
         }
-       }
+        }
+            else if segue.identifier == "searchSegue"{
+                if let dest = segue.destination as? LocationSearchViewController {
+                    dest.delegate = self
+                }
+            }
+        }
+    
+    fileprivate func registerForFireBaseUpdates()
+    {
+        self.ref!.child("history").observe(.value, with: { snapshot in
+            if let postDict = snapshot.value as? [String : AnyObject] {
+                var tmpItems = [LocationLookup]()
+                for (_,val) in postDict.enumerated() {
+                    let entry = val.1 as! Dictionary<String,AnyObject>
+                    let timestamp = entry["timestamp"] as! String?
+                    let origLat = entry["origLat"] as! Double?
+                    let origLng = entry["origLng"] as! Double?
+                    let destLat = entry["destLat"] as! Double?
+                    let destLng = entry["destLng"] as! Double?
+                    tmpItems.append(LocationLookup(origLat: origLat!, origLng: origLng!, destLat: destLat!, destLng: destLng!,
+                                                   timestamp: (timestamp?.dateFromISO8601)!))
+                }
+                self.entries = tmpItems }
+        })
     }
     
+    func toDictionary(vals: LocationLookup) -> NSDictionary { return [
+        "timestamp": NSString(string: (vals.timestamp.iso8601)), "origLat" : NSNumber(value: vals.origLat),
+        "origLng" : NSNumber(value: vals.origLng),
+        "destLat" : NSNumber(value: vals.destLat),
+        "destLng" : NSNumber(value: vals.destLng), ]
+    }
+}
+
+extension ViewController: LocationSearchDelegate {
+    func set(calculationData: LocationLookup)
+{
+    self.p1Lat.text = "\(calculationData.origLat)"
+    self.p1Lng.text = "\(calculationData.origLng)"
+    self.p2Lat.text = "\(calculationData.destLat)"
+    self.p2Lng.text = "\(calculationData.destLng)"
+    self.doCalculatations()
+    }
     
 }
+
+
 
 
 

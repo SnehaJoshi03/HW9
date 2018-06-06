@@ -102,13 +102,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVe-bv-cap" customClass="GeoCalcButton" customModule="HW3" customModuleProvider="target">
+                                <rect key="frame" x="125.5" y="617" width="125" height="30"/>
+                                <state key="normal" title="Search"/>
+                                <connections>
+                                    <segue destination="fqX-cy-YFA" kind="show" identifier="searchSegue" id="LpJ-jE-2QV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="xdj-la-vzo" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:3" id="3v0-EL-rTq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uVe-bv-cap" secondAttribute="bottom" constant="20" id="5ds-QP-83J"/>
                             <constraint firstItem="y5a-pw-fKo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="64i-5X-07l"/>
                             <constraint firstItem="y5a-pw-fKo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="7e4-zm-U3w"/>
                             <constraint firstItem="xdj-la-vzo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="114" id="AA4-IK-21D"/>
+                            <constraint firstItem="uVe-bv-cap" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CZf-qe-RND"/>
                             <constraint firstItem="y5a-pw-fKo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JNM-Ef-rmK"/>
                             <constraint firstItem="y5a-pw-fKo" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OAj-Sv-flX"/>
                             <constraint firstItem="0fj-o9-fBk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SLq-jO-RX7"/>
@@ -119,6 +128,7 @@
                             <constraint firstItem="xdj-la-vzo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bB8-9Y-UcB"/>
                             <constraint firstItem="6OO-XP-paM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="fOq-ze-94X"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6OO-XP-paM" secondAttribute="trailing" constant="21" id="ieQ-Hh-IvL"/>
+                            <constraint firstItem="uVe-bv-cap" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:3" id="kVR-s7-3zL"/>
                             <constraint firstItem="0fj-o9-fBk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ufP-p6-Zo4"/>
                             <constraint firstItem="6OO-XP-paM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:3" id="vTz-UU-xn8"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xdj-la-vzo" secondAttribute="trailing" constant="20" symbolic="YES" id="xG6-m8-wwA"/>
@@ -151,6 +161,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2324" y="132.68365817091455"/>
+        </scene>
+        <!--Location Search View Controller-->
+        <scene sceneID="2eW-ju-vav">
+            <objects>
+                <viewController id="fqX-cy-YFA" customClass="LocationSearchViewController" customModule="HW3" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MQr-td-jh1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="XAj-am-LTo"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIi-6x-GsU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2934" y="894"/>
         </scene>
         <!--History Table Table View Controller-->
         <scene sceneID="NF5-Sk-Xgt">
