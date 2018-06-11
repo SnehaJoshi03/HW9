@@ -16,8 +16,7 @@ protocol SettingsViewControllerDelegate {
 
 class SettingsViewController: UIViewController {
     
-  
-    @IBOutlet weak var bearingUnits: UITextField!
+  @IBOutlet weak var bearingUnits: UITextField!
     @IBOutlet weak var distanceUnits: UITextField!
     @IBOutlet weak var picker: UIPickerView!
     
