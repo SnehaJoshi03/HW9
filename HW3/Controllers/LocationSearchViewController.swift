@@ -26,7 +26,6 @@ class LocationSearchViewController: FormViewController {
         
         super.viewDidLoad()
         
-        
         let cancelButton : UIBarButtonItem = UIBarButtonItem(title: "Cancel",
                                                              style: .plain,
                                                              target: self,
