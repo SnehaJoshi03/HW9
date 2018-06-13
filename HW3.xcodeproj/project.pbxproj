@@ -22,6 +22,9 @@
 		7B58B05A20C8262E00DF0586 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B58B05920C8262E00DF0586 /* GoogleService-Info.plist */; };
 		7B8DB74D20BF138200B74E12 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8DB74C20BF138200B74E12 /* HistoryTableViewCell.swift */; };
 		7B9B5C9420C762570042A305 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9B5C9320C762570042A305 /* LocationSearchViewController.swift */; };
+		7B9C07D020CF41A500E5B599 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9C07CF20CF41A500E5B599 /* Weather.swift */; };
+		7B9C07D220CF448300E5B599 /* DarkSkyWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9C07D120CF448300E5B599 /* DarkSkyWeatherService.swift */; };
+		7B9C07D420CFEB8300E5B599 /* API_KEYS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9C07D320CFEB8300E5B599 /* API_KEYS.swift */; };
 		7BC2656A20BE1252003152E2 /* LocationLookup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC2656920BE1252003152E2 /* LocationLookup.swift */; };
 		7BC2656C20BE1A2F003152E2 /* HistoryTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC2656B20BE1A2F003152E2 /* HistoryTableTableViewController.swift */; };
 		7BF759C020B862CB00226750 /* GeoCalcLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF759BF20B862CB00226750 /* GeoCalcLabel.swift */; };
@@ -71,6 +74,9 @@
 		7B58B05920C8262E00DF0586 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7B8DB74C20BF138200B74E12 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		7B9B5C9320C762570042A305 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
+		7B9C07CF20CF41A500E5B599 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		7B9C07D120CF448300E5B599 /* DarkSkyWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSkyWeatherService.swift; sourceTree = "<group>"; };
+		7B9C07D320CFEB8300E5B599 /* API_KEYS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_KEYS.swift; sourceTree = "<group>"; };
 		7BC2656920BE1252003152E2 /* LocationLookup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationLookup.swift; sourceTree = "<group>"; };
 		7BC2656B20BE1A2F003152E2 /* HistoryTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableTableViewController.swift; sourceTree = "<group>"; };
 		7BF759BF20B862CB00226750 /* GeoCalcLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoCalcLabel.swift; sourceTree = "<group>"; };
@@ -167,6 +173,9 @@
 				7B08C7E420ADD19800195E9A /* CLLocationExtensions.swift */,
 				7B08C7BE20ADD0DD00195E9A /* Info.plist */,
 				7B08C7E220ADD18400195E9A /* DecimalMinusTextField.swift */,
+				7B9C07CF20CF41A500E5B599 /* Weather.swift */,
+				7B9C07D120CF448300E5B599 /* DarkSkyWeatherService.swift */,
+				7B9C07D320CFEB8300E5B599 /* API_KEYS.swift */,
 			);
 			path = HW3;
 			sourceTree = "<group>";
@@ -468,6 +477,9 @@
 				7B08C7E320ADD18400195E9A /* DecimalMinusTextField.swift in Sources */,
 				7B08C7E120ADD10900195E9A /* SettingsViewController.swift in Sources */,
 				7B9B5C9420C762570042A305 /* LocationSearchViewController.swift in Sources */,
+				7B9C07D420CFEB8300E5B599 /* API_KEYS.swift in Sources */,
+				7B9C07D220CF448300E5B599 /* DarkSkyWeatherService.swift in Sources */,
+				7B9C07D020CF41A500E5B599 /* Weather.swift in Sources */,
 				7BC2656C20BE1A2F003152E2 /* HistoryTableTableViewController.swift in Sources */,
 				7B8DB74D20BF138200B74E12 /* HistoryTableViewCell.swift in Sources */,
 				7BC2656A20BE1252003152E2 /* LocationLookup.swift in Sources */,

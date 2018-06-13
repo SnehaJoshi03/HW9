@@ -14,6 +14,8 @@ class ViewController: UIViewController,SettingsViewControllerDelegate,HistoryTab
     
     fileprivate var ref : DatabaseReference?
     
+    let wAPI = DarkSkyWeatherService.getInstance()
+    
     var entries : [LocationLookup] = [
         LocationLookup(origLat: 90.0, origLng: 0.0, destLat: -90.0, destLng: 0.0,
                        timestamp: Date.distantPast),
@@ -26,6 +28,13 @@ class ViewController: UIViewController,SettingsViewControllerDelegate,HistoryTab
     @IBOutlet weak var p2Lng: DecimalMinusTextField!
     
    
+    @IBOutlet weak var origImage: UIImageView!
+    @IBOutlet weak var origTemp: GeoCalcLabel!
+    @IBOutlet weak var destImage: UIImageView!
+    @IBOutlet weak var origForecast: GeoCalcLabel!
+    @IBOutlet weak var destTemp: GeoCalcLabel!
+    @IBOutlet weak var destForecast: GeoCalcLabel!
+    
     @IBOutlet weak var distanceLabel: UILabel!
     @IBOutlet weak var bearingLabel: UILabel!
     
@@ -44,7 +53,16 @@ class ViewController: UIViewController,SettingsViewControllerDelegate,HistoryTab
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.clearWeatherViews()
+    }
+    
+    func clearWeatherViews(){
+        self.destImage.image = nil
+        self.origImage.image = nil
+        self.destForecast.text = ""
+        self.origForecast.text = ""
+        self.origTemp.text = ""
+        self.destTemp.text = ""
     }
     
     func settingsChanged(distanceUnits: String, bearingUnits: String){
@@ -90,6 +108,25 @@ class ViewController: UIViewController,SettingsViewControllerDelegate,HistoryTab
         newChild?.setValue(self.toDictionary(vals: entry))
         
        // entries.append(LocationLookup(origLat: p1lt, origLng: p1ln, destLat: p2lt,destLng: p2ln, timestamp: Date()))
+        
+        wAPI.getWeatherForDate(date: Date(), forLocation: (p1lt, p1ln)){ (weather) in
+            if let w = weather {
+                DispatchQueue.main.async {
+                    self.origTemp.text = "\(w.temperature.roundTo(places: 1)) º"
+                    self.origImage.image = UIImage(named: w.iconName)
+                    self.origForecast.text = w.summary
+                }
+            }
+        }
+        wAPI.getWeatherForDate(date: Date(), forLocation: (p2lt, p2ln)){ (weather) in
+            if let w = weather {
+                DispatchQueue.main.async {
+                    self.destTemp.text = "\(w.temperature.roundTo(places: 1)) º"
+                    self.destImage.image = UIImage(named: w.iconName)
+                    self.destForecast.text = w.summary
+                }
+            }
+        }
     }
     
    @IBAction func calculateButtonPressed(_ sender: UIButton) {

@@ -91,48 +91,103 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fj-o9-fBk" customClass="GeoCalcLabel" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="16" y="273" width="343" height="20.5"/>
+                                <rect key="frame" x="11" y="228" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bearing: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8C2-xn-Uw6" customClass="GeoCalcLabel" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="16" y="301" width="343" height="20.5"/>
+                                <rect key="frame" x="11" y="255.5" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uVe-bv-cap" customClass="GeoCalcButton" customModule="HW3" customModuleProvider="target">
-                                <rect key="frame" x="125.5" y="617" width="125" height="30"/>
+                                <rect key="frame" x="125" y="617" width="125" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
                                     <segue destination="fqX-cy-YFA" kind="show" identifier="searchSegue" id="LpJ-jE-2QV"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="vs0-T6-4YJ">
+                                <rect key="frame" x="0.0" y="284" width="375" height="320"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="115-hl-n2z">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="101"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5ac-4u-VTD">
+                                                <rect key="frame" x="0.0" y="0.0" width="183.5" height="101"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etY-7x-Ed2" customClass="GeoCalcLabel" customModule="HW3" customModuleProvider="target">
+                                                <rect key="frame" x="191.5" y="0.0" width="183.5" height="101"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDV-4J-HqK" customClass="GeoCalcLabel" customModule="HW3" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="107" width="375" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w1L-da-0eS">
+                                        <rect key="frame" x="0.0" y="163" width="375" height="101"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9on-hx-yJK">
+                                                <rect key="frame" x="0.0" y="0.0" width="183.5" height="101"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ceq-OL-n9T" customClass="GeoCalcLabel" customModule="HW3" customModuleProvider="target">
+                                                <rect key="frame" x="191.5" y="0.0" width="183.5" height="101"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJY-lz-vjh" customClass="GeoCalcLabel" customModule="HW3" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="270" width="343" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="115-hl-n2z" firstAttribute="centerX" secondItem="vs0-T6-4YJ" secondAttribute="centerX" id="XFl-j3-U4q"/>
+                                    <constraint firstItem="w1L-da-0eS" firstAttribute="centerX" secondItem="vs0-T6-4YJ" secondAttribute="centerX" id="xUb-Lx-EKh"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="vs0-T6-4YJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="21q-Ks-zPL"/>
                             <constraint firstItem="xdj-la-vzo" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:3" id="3v0-EL-rTq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uVe-bv-cap" secondAttribute="bottom" constant="20" id="5ds-QP-83J"/>
                             <constraint firstItem="y5a-pw-fKo" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="64i-5X-07l"/>
                             <constraint firstItem="y5a-pw-fKo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="13" id="7e4-zm-U3w"/>
                             <constraint firstItem="xdj-la-vzo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="114" id="AA4-IK-21D"/>
+                            <constraint firstItem="vs0-T6-4YJ" firstAttribute="top" secondItem="8C2-xn-Uw6" secondAttribute="bottom" constant="8" symbolic="YES" id="AtB-SP-xSD"/>
                             <constraint firstItem="uVe-bv-cap" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CZf-qe-RND"/>
+                            <constraint firstItem="vs0-T6-4YJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="D6e-pK-lu5"/>
                             <constraint firstItem="y5a-pw-fKo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JNM-Ef-rmK"/>
+                            <constraint firstItem="vs0-T6-4YJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LUO-fy-6fF"/>
                             <constraint firstItem="y5a-pw-fKo" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="OAj-Sv-flX"/>
-                            <constraint firstItem="0fj-o9-fBk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="SLq-jO-RX7"/>
-                            <constraint firstItem="8C2-xn-Uw6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="UbM-aD-5ET"/>
-                            <constraint firstItem="8C2-xn-Uw6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Ve7-ej-3RB"/>
+                            <constraint firstItem="0fj-o9-fBk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-5" id="SLq-jO-RX7"/>
+                            <constraint firstItem="8C2-xn-Uw6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="11" id="UbM-aD-5ET"/>
+                            <constraint firstItem="8C2-xn-Uw6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" constant="-5" id="Ve7-ej-3RB"/>
                             <constraint firstItem="8C2-xn-Uw6" firstAttribute="top" secondItem="0fj-o9-fBk" secondAttribute="bottom" constant="7.5" id="Xgt-rI-DPp"/>
                             <constraint firstItem="6OO-XP-paM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="aNF-Ke-T3i"/>
                             <constraint firstItem="xdj-la-vzo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bB8-9Y-UcB"/>
                             <constraint firstItem="6OO-XP-paM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="115" id="fOq-ze-94X"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6OO-XP-paM" secondAttribute="trailing" constant="21" id="ieQ-Hh-IvL"/>
                             <constraint firstItem="uVe-bv-cap" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:3" id="kVR-s7-3zL"/>
-                            <constraint firstItem="0fj-o9-fBk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="ufP-p6-Zo4"/>
+                            <constraint firstItem="0fj-o9-fBk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="11" id="ufP-p6-Zo4"/>
                             <constraint firstItem="6OO-XP-paM" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:3" id="vTz-UU-xn8"/>
+                            <constraint firstItem="vs0-T6-4YJ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="xDT-pf-FMu"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xdj-la-vzo" secondAttribute="trailing" constant="20" symbolic="YES" id="xG6-m8-wwA"/>
-                            <constraint firstItem="0fj-o9-fBk" firstAttribute="top" secondItem="xdj-la-vzo" secondAttribute="bottom" constant="65" id="z03-Zw-CGZ"/>
+                            <constraint firstItem="0fj-o9-fBk" firstAttribute="top" secondItem="xdj-la-vzo" secondAttribute="bottom" constant="20" id="z03-Zw-CGZ"/>
+                            <constraint firstItem="vs0-T6-4YJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zkJ-uS-k4G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -151,7 +206,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bearingLabel" destination="8C2-xn-Uw6" id="wUC-xm-Vda"/>
+                        <outlet property="destForecast" destination="hJY-lz-vjh" id="Zze-Bk-nPB"/>
+                        <outlet property="destImage" destination="9on-hx-yJK" id="gUm-bB-QBw"/>
+                        <outlet property="destTemp" destination="Ceq-OL-n9T" id="Kve-Ra-rMI"/>
                         <outlet property="distanceLabel" destination="0fj-o9-fBk" id="Zu6-Uw-zjc"/>
+                        <outlet property="origForecast" destination="YDV-4J-HqK" id="3Hw-qd-OIU"/>
+                        <outlet property="origImage" destination="5ac-4u-VTD" id="DGd-BC-QUZ"/>
+                        <outlet property="origTemp" destination="etY-7x-Ed2" id="N8Q-kH-KDO"/>
                         <outlet property="p1Lat" destination="OTc-Kl-Ut1" id="fjA-eu-w0r"/>
                         <outlet property="p1Lng" destination="JBX-u4-jTZ" id="okz-jj-Iux"/>
                         <outlet property="p2Lat" destination="29p-dP-kHr" id="9K4-tb-Xm6"/>
